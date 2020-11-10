@@ -1,4 +1,5 @@
 require 'omniauth-oauth2'
+require 'digest'
 
 module OmniAuth
   module Strategies
