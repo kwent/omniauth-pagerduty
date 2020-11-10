@@ -1,4 +1,4 @@
-![Ruby](https://pagerduty.com/omniauth/omniauth-pagerduty/workflows/Ruby/badge.svg?branch=master)
+![Ruby](https://github.com/kwent/omniauth-pagerduty/workflows/Ruby/badge.svg?branch=master)
 
 # OmniAuth PagerDuty
 
