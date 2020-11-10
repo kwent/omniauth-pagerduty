@@ -4,7 +4,7 @@
 
 This is the official OmniAuth strategy for authenticating to PagerDuty. To
 use it, you'll need to sign up for an OAuth2 Application ID and Secret
-on the [PagerDuty Applications Page](https://pagerduty.com/settings/applications).
+on the [PagerDuty Developer Page](https://developer.pagerduty.com/sign-up/).
 
 ## Installation
 
