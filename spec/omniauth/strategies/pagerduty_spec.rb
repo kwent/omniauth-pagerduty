@@ -30,7 +30,7 @@ describe OmniAuth::Strategies::PagerDuty do
 
   context 'client options' do
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://app.pagerduty.com')
+      expect(subject.options.client_options.site).to eq('https://api.pagerduty.com')
     end
 
     it 'should have correct authorize url' do
@@ -53,19 +53,6 @@ describe OmniAuth::Strategies::PagerDuty do
       it 'for token url' do
         expect(enterprise.options.client_options.token_url).to eq(enterprise_token_url)
       end
-    end
-  end
-
-  context '#raw_info' do
-    it 'should use relative paths' do
-      expect(access_token).to receive(:get).with('user').and_return(response)
-      expect(subject.raw_info).to eq(parsed_response)
-    end
-
-    it 'should use the header auth mode' do
-      expect(access_token).to receive(:get).with('user').and_return(response)
-      subject.raw_info
-      expect(access_token.options[:mode]).to eq(:header)
     end
   end
 

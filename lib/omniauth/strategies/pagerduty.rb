@@ -4,9 +4,14 @@ module OmniAuth
   module Strategies
     class PagerDuty < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        :site => 'https://app.pagerduty.com',
-        :authorize_url => 'https://app.pagerduty.com/oauth/authorize',
-        :token_url => 'https://app.pagerduty.com/oauth/token'
+        site: 'https://api.pagerduty.com',
+        authorize_url: 'https://app.pagerduty.com/oauth/authorize',
+        token_url: 'https://app.pagerduty.com/oauth/token',
+        response_type: 'code',
+      }
+
+      option :auth_token_params, {
+        grant_type: 'authorization_code',
       }
 
       def request_phase
@@ -15,7 +20,7 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          %w[scope client_options].each do |v|
+          %w[client_options].each do |v|
             if request.params[v]
               params[v.to_sym] = request.params[v]
             end
@@ -23,19 +28,19 @@ module OmniAuth
         end
       end
 
-      uid { raw_info['id'].to_s }
+      uid { Digest::SHA2.hexdigest("#{me['user']['id']}-#{access_token.client.id}") }
 
       extra do
-        {:raw_info => raw_info, :scope => scope }
+        { raw_info: raw_info, me: me }
       end
 
       def raw_info
-        access_token.options[:mode] = :header
-        @raw_info ||= access_token.get('user').parsed
+        @raw_info ||= {}
       end
 
-      def scope
-        access_token['scope']
+      def me
+        access_token.options[:mode] = :header
+        @me ||= access_token.get('users/me', headers: { 'Accept' => 'application/vnd.pagerduty+json;version=2' }).parsed
       end
 
       def callback_url
@@ -46,3 +51,4 @@ module OmniAuth
 end
 
 OmniAuth.config.add_camelization 'pagerduty', 'PagerDuty'
+OmniAuth.config.add_camelization 'pager_duty', 'PagerDuty'
