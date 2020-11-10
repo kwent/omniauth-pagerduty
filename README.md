@@ -30,16 +30,6 @@ In `config/initializers/pagerduty.rb`
   end
 ```
 
-## Scopes
-
-PagerDuty API v3 lets you set scopes to provide granular access to different types of data:
-
-```ruby
-use OmniAuth::Builder do
-  provider :pagerduty, ENV['PAGERDUTY_KEY'], ENV['PAGERDUTY_SECRET']
-end
-```
-
 ## Semver
 
 This project adheres to Semantic Versioning 2.0.0. Any violations of this scheme are considered to be bugs.
