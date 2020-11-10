@@ -36,7 +36,7 @@ PagerDuty API v3 lets you set scopes to provide granular access to different typ
 
 ```ruby
 use OmniAuth::Builder do
-  provider :pagerduty, ENV['PAGERDUTY_KEY'], ENV['PAGERDUTY_SECRET'], scope: "user,repo,gist"
+  provider :pagerduty, ENV['PAGERDUTY_KEY'], ENV['PAGERDUTY_SECRET']
 end
 ```
 
