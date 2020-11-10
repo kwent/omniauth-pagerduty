@@ -9,7 +9,7 @@ on the [PagerDuty Developer Page](https://developer.pagerduty.com/sign-up/).
 ## Installation
 
 ```ruby
-gem 'omniauth-pagerduty', pagerduty: 'omniauth/omniauth-pagerduty', branch: 'master'
+gem 'omniauth-pagerduty', pagerduty: 'kwent/omniauth-pagerduty', branch: 'master'
 ```
 
 ## Basic Usage
@@ -40,12 +40,10 @@ use OmniAuth::Builder do
 end
 ```
 
-More info on [Scopes](https://docs.pagerduty.com/en/developers/apps/scopes-for-oauth-apps).
-
 ## Semver
 
 This project adheres to Semantic Versioning 2.0.0. Any violations of this scheme are considered to be bugs.
-All changes will be tracked [here](https://pagerduty.com/omniauth/omniauth-pagerduty/releases).
+All changes will be tracked [here](https://github.com/kwent/omniauth-pagerduty/releases).
 
 ## License
 
