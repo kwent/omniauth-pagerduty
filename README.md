@@ -9,7 +9,7 @@ on the [PagerDuty Developer Page](https://developer.pagerduty.com/sign-up/).
 ## Installation
 
 ```ruby
-gem 'omniauth-pagerduty', github: 'kwent/omniauth-pagerduty', branch: 'master'
+gem 'omniauth-pagerduty'
 ```
 
 ## Basic Usage
