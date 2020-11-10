@@ -16,7 +16,7 @@ gem 'omniauth-pagerduty'
 
 ```ruby
 use OmniAuth::Builder do
-  provider :pagerduty, ENV['PAGERDUTY_KEY'], ENV['PAGERDUTY_SECRET']
+  provider :pagerduty, ENV['PAGERDUTY_CLIENT_ID'], ENV['PAGERDUTY_CLIENT_SECRET']
 end
 ```
 
@@ -26,7 +26,7 @@ In `config/initializers/pagerduty.rb`
 
 ```ruby
   Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :pagerduty, ENV['PAGERDUTY_KEY'], ENV['PAGERDUTY_SECRET']
+    provider :pagerduty, ENV['PAGERDUTY_CLIENT_ID'], ENV['PAGERDUTY_CLIENT_SECRET']
   end
 ```
 

@@ -9,7 +9,7 @@ describe OmniAuth::Strategies::PagerDuty do
   let(:enterprise_authorize_url) { 'https://some.other.site.com/login/oauth/authorize' }
   let(:enterprise_token_url)     { 'https://some.other.site.com/login/oauth/token' }
   let(:enterprise) do
-    OmniAuth::Strategies::PagerDuty.new('PAGERDUTY_KEY', 'PAGERDUTY_SECRET',
+    OmniAuth::Strategies::PagerDuty.new('PAGERDUTY_CLIENT_ID', 'PAGERDUTY_CLIENT_SECRET',
         {
             :client_options => {
                 :site => enterprise_site,
