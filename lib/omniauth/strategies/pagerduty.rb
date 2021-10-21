@@ -10,6 +10,8 @@ module OmniAuth
         token_url: 'https://app.pagerduty.com/oauth/token',
         response_type: 'code',
       }
+      
+      option :pkce, true
 
       option :auth_token_params, {
         grant_type: 'authorization_code',
