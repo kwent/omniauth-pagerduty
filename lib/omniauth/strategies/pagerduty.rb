@@ -7,13 +7,10 @@ module OmniAuth
       option :client_options, {
         site: 'https://api.pagerduty.com',
         authorize_url: 'https://app.pagerduty.com/oauth/authorize',
-        token_url: 'https://app.pagerduty.com/oauth/token',
-        response_type: 'code',
+        token_url: 'https://app.pagerduty.com/oauth/token'
       }
-
-      option :auth_token_params, {
-        grant_type: 'authorization_code',
-      }
+      
+      option :pkce, true
 
       def request_phase
         super
