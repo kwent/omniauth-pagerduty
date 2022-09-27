@@ -11,6 +11,7 @@ module OmniAuth
       }
       
       option :pkce, true
+      option :provider_ignores_state, true
 
       def request_phase
         super
