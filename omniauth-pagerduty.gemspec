@@ -16,6 +16,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = OmniAuth::PagerDuty::VERSION
 
+  gem.required_ruby_version = ">= 3"
+
   gem.add_dependency 'omniauth', '~> 2.0.0'
   gem.add_dependency 'omniauth-oauth2', '>= 1.4.0', '< 2.0'
 
